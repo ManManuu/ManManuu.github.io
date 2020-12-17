@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+    <script src="components/walltexture.js"></script>
+</head>
+<body>
+    <a-scene>
+        <a-assets>
+            <img id="texture" src="assets/texture.png">
+            <a-asset-items id="robot" src="assets/scene.gltf"></a-asset-items>
+        </a-assets>
+
+        <a-plane position="0 0 -4" rotation="-90 0 0" width="80" height="80" color="gray"></a-plane>
+
+        <a-sky color="white"></a-sky>
+
+        <a-box position="-2 2.5 -8"
+               src="#texture"
+               repeat="1 1"
+               rotation="0 90 0"             
+               scale="10 5 1"
+               foo>
+        </a-box> 
+
+
+        <a-box position="2 2.5 -6" rotation="0 90 0" depth="1" height="5" width="6" src="#texture" repeat="1 1"></a-box>
+        <a-box position="1 2.5 -13" depth="1" height="5" width="7" src="#texture" repeat="1 1"></a-box>
+        <a-box position="5 2.5 -9.5" depth="1" height="5" width="7" src="#texture" repeat="1 1"></a-box>
+        <a-box position="8 2.5 -17.5" rotation="0 90 0" depth="1" height="5" width="15" src="#texture" repeat="1 1"></a-box>
+        <a-box position="5 2.5 -14" rotation="0 90 0"  depth="1" height="5" width="3" src="#texture" repeat="1 1"></a-box>
+        <a-box position="1 2.5 -15" depth="1" height="5" width="7" src="#texture" repeat="1 1"></a-box>
+        <a-box position="-2 2.5 -13.5" rotation="0 90 0"  depth="1" height="5" width="8" src="#texture" repeat="1 1"></a-box>
+        <a-box position="3.5 2.5 -21" rotation="0 90 0"  depth="3" height="5" width="6" src="#texture" repeat="1 1"></a-box>
+        <a-box position="6 2.5 -28.5"  depth="1" height="5" width="11" src="#texture" repeat="1 1"></a-box>
+        <a-box position="-2 2.5 -24" rotation="0 90 0"  depth="1" height="5" width="8" src="#texture" repeat="1 1"></a-box>
+        <a-box position="12 2.5 -25" rotation="0 90 0"  depth="1" height="5" width="8" src="#texture" repeat="1 1"></a-box>
+        <a-box position="11 2.5 -18.5"  depth="1" height="5" width="7" src="#texture" repeat="1 1"></a-box>
+        <a-box position="15 2.5 -22" rotation="0 90 0"  depth="1" height="5" width="8" src="#texture" repeat="1 1"></a-box>
+        <a-box position="16 2.5 -28.5"  depth="1" height="5" width="17" src="#texture" repeat="1 1"></a-box>
+        <a-box position="25 2.5 -21" rotation="0 90 0"  depth="1" height="5" width="15" src="#texture" repeat="1 1"></a-box>
+        <a-box position="16 2.5 -14"  depth="1" height="5" width="17" src="#texture" repeat="1 1"></a-box>
+
+        <a-sphere position="10 2.2 -16.25" color="yellow" animation="property: scale; to: 1 1 1; from: 0.5 0.5 0.5; duration:3000; loop: true;
+                    direction: alternate;" >
+        </a-sphere>
+
+        <a-gltf-model animation="property: position; dir: alternate; to: 0 1.2 10; dur: 2000; loop: true;"
+                      shadow="cast:true" position="0 10 10" src="#thwomp" rotation="0 -180 0"></a-gltf-model>
+
+
+        <a-box position="-6.5 2.5 -20" rotation="0 90 0" src="#texture" repeat="1 1" depth="1" height="5" width="16"></a-box>
+        <a-box position="-4.5 2.5 -28.5" src="#texture" repeat="1 1" depth="1" height="5" width="6"></a-box>
+        <a-box position="-6 2.5 -8" src="#texture" repeat="1 1" depth="1" height="5" width="9"></a-box>
+        <a-box position="-10 2.5 -11.5" rotation="0 90 0" src="#texture" repeat="1 1" depth="1" height="5" width="8"></a-box>
+        <a-box position="-8.5 2.5 -16" src="#texture" repeat="1 1" depth="1" height="5" width="3.5"></a-box>
+        <a-box position="20 2.5 -21" src="#texture" repeat="1 1" depth="9" height="5" width="4"></a-box>
+        <a-box position="6 2.5 -37" src="#texture" repeat="1 1" depth="1" height="5" width="26"></a-box>
+        <a-box position="-7 2.5 -31" src="#texture" repeat="1 1" depth="11" height="5" width="1"></a-box>
+        <a-box position="5 2.5 -32.5" src="#texture" repeat="1 1" depth="1" height="5" width="18"></a-box>
+        <a-box position="19 2.5 -34.5" src="#texture" repeat="1 1" depth="11" height="5" width="1"></a-box>
+        <a-box position="8 2.5 -35" src="#texture" repeat="1 1" depth="4" height="5" width="1"></a-box>
+
+
+        <a-box position="-8.25 3 -14" rotation="0 45 0" color="#4CC3D9"
+               event-set__enter="_event: mouseenter; color: #d4af37"
+               event-set__leave="_event: mouseleave; color: #4CC3D9"></a-box>
+
+        <a-camera>
+            <a-entity cursor="fuse: true " position="0 0 -1"
+                      geometry="primitive: sphere; radius: 0.005"
+                      material="color: #000000; shader: flat; opacity: 0.5">
+            </a-entity>
+        </a-camera>
+
+        <!--<a-gltf-model src="#robot"></a-gltf-model>-->s
+
+        <!--<a-entity light="color: #AFA; intensity: 1.6" position="-0.5 1 0"></a-entity>-->
+
+        <a-entity cursor position="0 0 -5"></a-entity>
+
+        <a-entity id="elmo" geometry="primitive: box" material="src: elmo.png"
+                  position="6 0 -35"
+                  sound="src: url(assets/hellothere.mp3); on: click"></a-entity>
+
+        s
+
+
+    </a-scene>
+</body>
+</html> 
